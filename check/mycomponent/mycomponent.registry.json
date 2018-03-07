@@ -1,0 +1,12 @@
+{
+  "namespace": "mycomponent",
+  "fsNamespace": "mycomponent",
+  "loader": "../mycomponent.js",
+  "core": "mycomponent.nhggovgk.js",
+  "corePolyfilled": "mycomponent.vtrefp6c.js",
+  "components": {
+    "my-component": {
+      "$": "egjksajo"
+    }
+  }
+}
