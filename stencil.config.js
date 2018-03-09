@@ -12,7 +12,7 @@ exports.config = {
   ],
   generateDistribution: true,
   serviceWorker: false,
-  buildDir: 'build',
+  buildDir: 'assets/build',
   collections: [
   ]
 };
