@@ -9,19 +9,8 @@
 </head>
 <body>
 
-  <my-component start="10" step="3" max="150" min="2"></my-component>
+  <my-component [min]="min" [max]="max" [value]="value"></my-component>
 
-
-  <script>
-    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      // auto-unregister service worker during dev mode
-      navigator.serviceWorker.getRegistration().then(function(registration) {
-        if (registration) {
-          registration.unregister().then(function() { location.reload(true) });
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>

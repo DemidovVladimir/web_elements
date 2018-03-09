@@ -45,8 +45,7 @@ declare global {
     export interface MyComponentAttributes extends HTMLAttributes {
       max?: number;
       min?: number;
-      start?: number;
-      step?: number;
+      value?: number;
     }
   }
 }

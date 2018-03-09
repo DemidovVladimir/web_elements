@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'my-component',
@@ -6,47 +6,22 @@ import { Component, Prop, State } from '@stencil/core';
 })
 export class MyComponent {
 
-  @Prop() start: number = 1;
-  @Prop() max: number = 100;
-  @Prop() min: number = 0;
-  @Prop() step: number = 1;
+  @Prop() min: number;
+  @Prop() max: number;
+  @Prop() value: number;
 
-  @State() value: number;
+  @Event() valueChanged: EventEmitter;
 
-  componentWillLoad() {
-    this.value = this.start;
-  }
-
-  increment() {
-    const newValue = this.value + this.step;
-    if (newValue > this.max) {
-      this.value = this.max;
-    } else {
-      this.value = newValue;
-    }
-  }
-
-  decrement() {
-    const newValue = this.value - this.step;
-    if (newValue < this.min) {
-      this.value = this.min;
-    } else {
-      this.value = newValue;
-    }
+  valueChangedHandler(event: any) {
+    this.valueChanged.emit(event.target.value);
   }
 
   render() {
     return (
-      <div>
-        <button class="button-1" type="button" onClick={() => this.increment()}>
-          +
-        </button>
-        <span>
-          {this.value}
-        </span>
-        <button class="button-2" type="button" onClick={() => this.decrement()}>
-          -
-        </button>
+      <div class="slider-container">
+        <input type="range" min={this.min} max={this.max} value={this.value} class="slider"
+               onChange={(event) => this.valueChangedHandler(event)}>
+        </input>
       </div>
     );
   }
