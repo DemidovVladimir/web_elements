@@ -1,16 +1,23 @@
 const sass = require('@stencil/sass');
 
 exports.config = {
-  namespace: 'mycomponent',
+  namespace: 'my-component',
+  bundles: [
+    {
+      components: ['my-component']
+    }
+  ],
   plugins: [
     sass()
   ],
   generateDistribution: true,
-  serviceWorker: false
+  serviceWorker: false,
+  buildDir: 'build',
+  collections: [
+  ]
 };
 
 exports.devServer = {
   root: 'www',
-  watchGlob: '**/**',
-  fallback: './src/index.html'
+  watchGlob: '**/**'
 };
