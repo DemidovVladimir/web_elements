@@ -44,6 +44,7 @@ declare global {
   namespace JSXElements {
     export interface MyButtonAttributes extends HTMLAttributes {
       link?: string;
+      url?: string;
     }
   }
 }

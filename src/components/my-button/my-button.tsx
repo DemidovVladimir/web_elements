@@ -6,17 +6,18 @@ import { Component, Prop, Event, EventEmitter } from '@stencil/core';
 export class MyButton {
 
   @Prop() link: string;
+  @Prop() url: string;
 
   @Event() clickedButton: EventEmitter;
 
-  buttonClickedHandler(event: any) {
-    this.clickedButton.emit(event.target.value);
+  buttonClickedHandler() {
+    this.clickedButton.emit(this.url);
   }
 
   render() {
     return (
       <div class="my-button-wrapper">
-        <button onClick={ event => this.buttonClickedHandler(event)}>{this.link}</button>
+        <button onClick={ () => this.buttonClickedHandler()}>{this.link}</button>
       </div>
     );
   }
