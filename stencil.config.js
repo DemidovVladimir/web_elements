@@ -1,10 +1,12 @@
 const sass = require('@stencil/sass');
 
 exports.config = {
-  namespace: 'my-component',
   bundles: [
     {
-      components: ['my-component']
+      components: [
+        'my-component',
+        'my-button'
+      ]
     }
   ],
   plugins: [
