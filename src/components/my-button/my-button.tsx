@@ -10,14 +10,14 @@ export class MyButton {
 
   @Event() clickedButton: EventEmitter;
 
-  buttonClickedHandler(event: any) {
-    this.clickedButton.emit(event.target.url);
+  buttonClickedHandler() {
+    this.clickedButton.emit(this.url);
   }
 
   render() {
     return (
       <div class="my-button-wrapper">
-        <button onClick={ event => this.buttonClickedHandler(event)}>{this.link}</button>
+        <button onClick={ () => this.buttonClickedHandler()}>{this.link}</button>
       </div>
     );
   }
