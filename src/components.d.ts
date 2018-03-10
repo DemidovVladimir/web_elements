@@ -20,6 +20,36 @@ declare global {
 
 
 import {
+  MyButton as MyButton
+} from './components/my-button/my-button';
+
+declare global {
+  interface HTMLMyButtonElement extends MyButton, HTMLStencilElement {
+  }
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement;
+    new (): HTMLMyButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    "my-button": HTMLMyButtonElement;
+  }
+  interface ElementTagNameMap {
+    "my-button": HTMLMyButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "my-button": JSXElements.MyButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface MyButtonAttributes extends HTMLAttributes {
+      link?: string;
+    }
+  }
+}
+
+
+import {
   MyComponent as MyComponent
 } from './components/my-component/my-component';
 

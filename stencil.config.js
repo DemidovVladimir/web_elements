@@ -1,6 +1,7 @@
 const sass = require('@stencil/sass');
 
 exports.config = {
+  namespace: 'avengers',
   bundles: [
     {
       components: [
@@ -21,5 +22,6 @@ exports.config = {
 
 exports.devServer = {
   root: 'www',
-  watchGlob: '**/**'
+  watchGlob: '**/**',
+  fallback: './src/index.html'
 };
