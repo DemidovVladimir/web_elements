@@ -17,7 +17,7 @@ export class MyButton {
   render() {
     return (
       <div class="my-button-wrapper">
-        <button onClick={ () => this.buttonClickedHandler(event)}>{this.link}</button>
+        <button onClick={ event => this.buttonClickedHandler(event)}>{this.link}</button>
       </div>
     );
   }
